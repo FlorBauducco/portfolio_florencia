@@ -43,7 +43,7 @@ const SkillsSection = () => (
         {STUDIES.map((study) => (
           <div
             key={study.title}
-            className="bg-card rounded-xl p-6 shadow-sm border border-border"
+            className="bg-card rounded-xl p-6 shadow-sm border border-border mb-2"
           >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
               <h4 className="font-semibold text-foreground">{study.title}</h4>
@@ -56,6 +56,7 @@ const SkillsSection = () => (
             </p>
             <p className="text-muted-foreground">{study.description}</p>
           </div>
+          
         ))}
       </div>
     </div>
