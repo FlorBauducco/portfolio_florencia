@@ -37,8 +37,8 @@ const HeroSection = () => {
 
   return (
     <SectionWrapper id="home" className="relative">
-      <div className="absolute top-8 left-0 right-0 flex justify-center pointer-events-none">
-        <span className="text-gradient font-mono text-2xl md:text-3xl font-semibold tracking-wide">
+      <div className="absolute top-8 left-0 right-0 flex justify-center pointer-events-none px-4">
+        <span className="text-gradient font-mono text-sm md:text-2xl lg:text-3xl font-semibold tracking-wide">
           {displayed}
           <span className="animate-pulse">|</span>
         </span>
