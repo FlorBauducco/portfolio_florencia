@@ -9,7 +9,7 @@ const ContactSection = () => (
         Contacto
       </h2>
       <p className="text-muted-foreground text-lg mb-2">
-        ¿Hablamos? Estoy abierta a oportunidades y colaboraciones.
+        
       </p>
       <p className="flex items-center justify-center gap-1.5 text-muted-foreground mb-10">
         <MapPin size={16} />
@@ -35,7 +35,7 @@ const ContactSection = () => (
       </div>
 
       <p className="mt-16 text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Florencia Bauducco. Hecho con 💜
+        © {new Date().getFullYear()} Florencia Bauducco.
       </p>
     </div>
   </SectionWrapper>

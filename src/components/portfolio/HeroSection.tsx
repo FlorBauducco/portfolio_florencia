@@ -1,6 +1,6 @@
 import { Download } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
-import profileImg from "@/assets/me.jpg";
+import profileImg from "@/assets/me3.jpg";
 import { useEffect, useState } from "react";
 
 const TYPEWRITER_TEXT = "Desarrolladora Junior en crecimiento...";

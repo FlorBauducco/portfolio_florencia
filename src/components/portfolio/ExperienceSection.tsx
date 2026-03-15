@@ -46,6 +46,16 @@ const ExperienceCard = ({ experience }: { readonly experience: Experience }) => 
   </div>
 );
 
+const NonRelevantBanner = () => (
+  <div className="rounded-xl border border-primary/20 bg-primary/5 px-5 py-4 mb-6 text-sm text-muted-foreground leading-relaxed italic">
+    💼 Estas experiencias no están directamente relacionadas con mi camino en el
+    desarrollo de software, pero han sido fundamentales para forjarme como
+    profesional. Me han enseñado a comunicarme, adaptarme, trabajar bajo presión
+    y desenvolverme con soltura en entornos corporativos exigentes — habilidades
+    que hoy complementan mi perfil técnico.
+  </div>
+);
+
 const ExperienceSection = () => {
   const [activeTab, setActiveTab] = useState<TabKey>("relevant");
   const currentTab = TABS.find((t) => t.key === activeTab) ?? TABS[0];
@@ -72,6 +82,9 @@ const ExperienceSection = () => {
             </button>
           ))}
         </div>
+
+        {/* Banner solo visible en "Otras experiencias" */}
+        {activeTab === "non-relevant" && <NonRelevantBanner />}
 
         <div className="space-y-4">
           {currentTab.data.map((exp) => (
