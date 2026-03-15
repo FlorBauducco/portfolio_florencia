@@ -15,34 +15,64 @@ const Navigation = ({
   theme,
   onToggleTheme,
 }: NavigationProps) => (
-  <nav className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
-    {NAV_ITEMS.map(({ id, label, icon: Icon }) => (
+  <>
+    {/* Desktop: navegación vertical derecha*/}
+    <nav className="desktop-nav hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-50 flex-col gap-4">
+      {NAV_ITEMS.map(({ id, label, icon: Icon }) => (
+        <button
+          key={id}
+          onClick={() => onNavigate(id)}
+          className={`group relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
+            activeSection === id
+              ? "bg-primary text-primary-foreground shadow-lg"
+              : "bg-card text-muted-foreground hover:bg-secondary hover:text-foreground shadow-md"
+          }`}
+          aria-label={label}
+          title={label}
+        >
+          <Icon size={18} />
+          <span className="absolute right-14 px-3 py-1 rounded-md bg-card text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-md pointer-events-none">
+            {label}
+          </span>
+        </button>
+      ))}
+      <div className="w-px h-4 bg-border mx-auto" />
       <button
-        key={id}
-        onClick={() => onNavigate(id)}
-        className={`group relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
-          activeSection === id
-            ? "bg-primary text-primary-foreground shadow-lg"
-            : "bg-card text-muted-foreground hover:bg-secondary hover:text-foreground shadow-md"
-        }`}
-        aria-label={label}
-        title={label}
+        onClick={onToggleTheme}
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-card text-muted-foreground hover:bg-secondary hover:text-foreground shadow-md transition-all duration-300"
+        aria-label="Cambiar tema"
       >
-        <Icon size={18} />
-        <span className="absolute right-14 px-3 py-1 rounded-md bg-card text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-md pointer-events-none">
-          {label}
-        </span>
+        {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
       </button>
-    ))}
-    <div className="w-px h-4 bg-border mx-auto" />
-    <button
-      onClick={onToggleTheme}
-      className="flex items-center justify-center w-10 h-10 rounded-full bg-card text-muted-foreground hover:bg-secondary hover:text-foreground shadow-md transition-all duration-300"
-      aria-label="Cambiar tema"
-    >
-      {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
-    </button>
-  </nav>
+    </nav>
+
+    {/* Mobile: barra de navegación abajo */}
+    <nav className="mobile-nav md:hidden fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around px-4 py-3 bg-card/80 backdrop-blur-md border-t border-border shadow-lg">
+      {NAV_ITEMS.map(({ id, label, icon: Icon }) => (
+        <button
+          key={id}
+          onClick={() => onNavigate(id)}
+          className={`flex flex-col items-center gap-1 transition-all duration-300 ${
+            activeSection === id
+              ? "text-primary"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+          aria-label={label}
+        >
+          <Icon size={20} />
+          <span className="text-[10px] font-medium">{label}</span>
+        </button>
+      ))}
+      <button
+        onClick={onToggleTheme}
+        className="flex flex-col items-center gap-1 text-muted-foreground hover:text-foreground transition-all duration-300"
+        aria-label="Cambiar tema"
+      >
+        {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+        <span className="text-[10px] font-medium">Tema</span>
+      </button>
+    </nav>
+  </>
 );
 
 export default Navigation;

@@ -36,7 +36,7 @@ const HeroSection = () => {
   }, [charIndex, cycle]);
 
   return (
-    <SectionWrapper id="home" className="relative">
+    <SectionWrapper id="home" className="relative pb-20 md:pb-0">
       <div className="absolute top-8 left-0 right-0 flex justify-center pointer-events-none px-4">
         <span className="text-gradient font-mono text-sm md:text-2xl lg:text-3xl font-semibold tracking-wide">
           {displayed}

@@ -10,9 +10,9 @@ interface SectionWrapperProps {
 const SectionWrapper = ({ id, children, className = "" }: SectionWrapperProps) => (
   <section
     id={id}
-    className={`min-h-screen flex items-center py-20 px-6 md:px-12 lg:px-24 ${className}`}
+    className={`min-h-screen flex items-center py-20 px-6 md:px-12 lg:px-24 pb-24 md:pb-20 ${className}`}
   >
-    <div className="w-full max-w-4xl mx-auto">{children}</div>
+    <div className="w-full max-w-4xl mx-auto pr-14 md:pr-16">{children}</div>
   </section>
 );
 
