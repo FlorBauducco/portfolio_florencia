@@ -50,9 +50,7 @@ const NonRelevantBanner = () => (
   <div className="rounded-xl border border-primary/20 bg-primary/5 px-5 py-4 mb-6 text-sm text-muted-foreground leading-relaxed italic">
     💼 Estas experiencias no están directamente relacionadas con mi camino en el
     desarrollo de software, pero han sido fundamentales para forjarme como
-    profesional. Me han enseñado a comunicarme, adaptarme, trabajar bajo presión
-    y desenvolverme con soltura en entornos corporativos exigentes — habilidades
-    que hoy complementan mi perfil técnico.
+    profesional. Me han enseñado a comunicarme, adaptarme y desenvolverme en entornos corporativos exigentes, creando habilidades que hoy complementan mi perfil técnico.
   </div>
 );
 

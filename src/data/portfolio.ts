@@ -83,7 +83,7 @@ export const RELEVANT_EXPERIENCES: readonly Experience[] = [
     company: "Zaitec",
     period: "03/2026 - Present",
     description:
-      "Desarrollo de un proyecto de Visitas Virtuales en entorno colaborativo y remoto. Trabajo con Unity y C# para la creación de experiencias interactivas, utilizando GitHub para el control de versiones y Jira para la gestión ágil de tareas y seguimiento del proyecto.",
+      "Desarrollo de un proyecto de Visitas Virtuales en entorno colaborativo y remoto. Creación de experiencias interactivas con Unity y C#, utilizando GitHub para el control de versiones y Jira para la gestión ágil de tareas y seguimiento del proyecto.",
     tags: ["UNITY", "C#", "Jira", "Agile", "GitHub" ],
   },
   {
@@ -91,7 +91,7 @@ export const RELEVANT_EXPERIENCES: readonly Experience[] = [
     company: "Apex América",
     period: "07/2019 - 12/2021",
     description:
-      "Soporte técnico N1 para clientes y empresas, con diagnóstico y resolución de incidencias en redes, software móvil y routers. Gestión de alto volumen de tickets y llamadas con escalamiento estructurado a soporte N2. Experiencia en entornos de trabajo exigentes que forjaron sólidas habilidades de resolución de problemas, comunicación técnica y trabajo bajo presión.",
+      "Diagnóstico y resolución de incidencias técnicas de redes, software y dispositivos móviles. Gestión de tickets con Jira, SAP y Remedy; escalamiento estructurado a soporte N2. Desarrollo sólido de habilidades analíticas, resolución de problemas y documentación técnica.",
     tags: ["Gestión de tickets", "Resolución de incidencias", "Jira", "SAP", "Redes"],
   },
 ] as const;
@@ -102,7 +102,7 @@ export const NON_RELEVANT_EXPERIENCES: readonly Experience[] = [
     company: "Oximesa Nippon Gases",
     period: "11/2024 - Presente",
     description:
-      "Gestión integral de la atención al paciente en servicios de terapia respiratoria y del sueño, combinando soporte administrativo y orientación personalizada. Manejo de alto volumen de comunicaciones multicanal, resolución de incidencias y tareas backoffice. Uso habitual de herramientas corporativas como AS400, Dynamics 365, Cisco Finesse y MS Office.",
+      "Gestión integral de la atención al paciente en servicios de terapia respiratoria y del sueño, combinando soporte administrativo y orientación personalizada. Gestión de alto volumen de incidencias, correos y tareas backoffice con herramientas CRM corporativas. Gestión de base de datos de pacientes con AS400 y Dynamics 365, garantizando precisión y trazabilidad.",
     tags: ["Dynamics 365", "AS400", "Resolución de incidencias", "Trabajo bajo Presión", "Gestión Multicanal"],
   },
   {
@@ -110,7 +110,7 @@ export const NON_RELEVANT_EXPERIENCES: readonly Experience[] = [
     company: "AVATEL Telecom",
     period: "09/2024 - 11/2024",
     description:
-      "Gestión y actualización de bases de datos asegurando precisión y consistencia de la información. Procesamiento de cargas masivas de datos mediante ficheros Excel y corrección de errores. Administración de documentación contractual y revisión de facturas en un entorno de telecomunicaciones..",
+      "Gestión y actualización de bases de datos asegurando precisión y consistencia de la información. Procesamiento de cargas masivas de datos mediante ficheros Excel y corrección de errores. Administración de documentación contractual y revisión de facturas corporativas.",
     tags: ["Base de datos", "Gestión de datos", "Excel", "Organización"],
   },
   {

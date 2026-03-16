@@ -66,11 +66,12 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 leading-relaxed">
             Desarrolladora junior con mentalidad de crecimiento constante y
             gran capacidad de adaptación. Me apasiona resolver problemas y
-            convertir ideas en soluciones reales. Busco un equipo donde seguir
-            aprendiendo y aportar desde el primer día.
+            convertir ideas en soluciones reales. Me encuentro con muchas ganas de comenzar
+            a aplicar mis conocimientos en proyectos prácticos y seguir creciendo en un entorno dinámico y
+            empresarial.
           </p>
           <a
-            href="/files/cv.fb1.pdf"
+            href="/files/cv.fb.dev.pdf"
             download
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity shadow-lg"
           >

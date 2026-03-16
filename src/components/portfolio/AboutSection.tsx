@@ -1,4 +1,3 @@
-import { InfoIcon, User2 } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 
 const AboutSection = () => (
