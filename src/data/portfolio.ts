@@ -6,6 +6,7 @@ import {
   Mail,
   Github,
   Linkedin,
+  BookOpen,
 } from "lucide-react";
 import type {
   NavItem,
@@ -19,6 +20,7 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { id: "home", label: "Inicio", icon: Home },
   { id: "about", label: "Sobre mí", icon: User },
   { id: "skills", label: "Skills", icon: GraduationCap },
+  { id: "studies", label: "Formación", icon: BookOpen },
   { id: "experience", label: "Experiencia", icon: Briefcase },
   { id: "contact", label: "Contacto", icon: Mail },
 ] as const;
@@ -59,7 +61,6 @@ export const STUDIES: readonly Study[] = [
     description:
       "Formación integral en desarrollo de software multiplataforma, incluyendo Java, Spring Boot, Bases de Datos, y Desarrollo web.",
   },
-
   {
     title: "Curso Desarrollo Web Full Stack",
     institution: "Udemy",
@@ -74,7 +75,6 @@ export const STUDIES: readonly Study[] = [
     description:
       "Formación completa en React y TypeScript orientada a proyectos del mundo real, con dominio del ecosistema React: hooks avanzados, estado global, autenticación, testing y desarrollo full stack con Node.js, Express y bases de datos relacionales y no relacionales.",
   },
-
 ] as const;
 
 export const RELEVANT_EXPERIENCES: readonly Experience[] = [
@@ -84,7 +84,7 @@ export const RELEVANT_EXPERIENCES: readonly Experience[] = [
     period: "03/2026 - Present",
     description:
       "Desarrollo de un proyecto de Visitas Virtuales en entorno colaborativo y remoto. Creación de experiencias interactivas con Unity y C#, utilizando GitHub para el control de versiones y Jira para la gestión ágil de tareas y seguimiento del proyecto.",
-    tags: ["UNITY", "C#", "Jira", "Agile", "GitHub" ],
+    tags: ["UNITY", "C#", "Jira", "Agile", "GitHub"],
   },
   {
     title: "Soporte Técnico & Atención al Cliente",
@@ -121,7 +121,6 @@ export const NON_RELEVANT_EXPERIENCES: readonly Experience[] = [
       "Gestión integral de procesos administrativos en el área de Recursos Humanos, incluyendo control de horarios, vacaciones y documentación de personal. Resolución de incidencias y atención a consultas mediante gestión masiva de comunicaciones corporativas. Proceso de digitalización y archivo documental, optimizando la organización y accesibilidad de la información.",
     tags: ["Comunicación", "Trabajo en equipo", "Resolución de incidencias", "Organización", "Entorno Corporativo"],
   },
-  
 ] as const;
 
 export const CONTACT_LINKS: readonly ContactLink[] = [

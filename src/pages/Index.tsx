@@ -2,6 +2,7 @@ import Navigation from "@/components/portfolio/Navigation";
 import HeroSection from "@/components/portfolio/HeroSection";
 import AboutSection from "@/components/portfolio/AboutSection";
 import SkillsSection from "@/components/portfolio/SkillsSection";
+import StudiesSection from "@/components/portfolio/StudiesSection";
 import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -23,6 +24,7 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
+        <StudiesSection />
         <ExperienceSection />
         <ContactSection />
       </main>

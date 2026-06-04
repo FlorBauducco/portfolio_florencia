@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
@@ -92,9 +92,7 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -104,11 +102,16 @@
   }
 
   h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Quantico', sans-serif;
+  }
+
+  body {
+    font-family: 'Roboto Mono', monospace;
   }
 }
 
-@layer utilities {
+@layer components {
+  /* Gradiente de fondo estático */
   .gradient-bg {
     background: linear-gradient(
       135deg,
@@ -118,6 +121,7 @@
     );
   }
 
+  /* Gradiente de fondo animado */
   .gradient-bg-animated {
     background: linear-gradient(
       135deg,
@@ -129,6 +133,7 @@
     animation: gradient-shift 8s ease infinite;
   }
 
+  /* Texto con gradiente — usa prefijos de vendor, va en components */
   .text-gradient {
     background: linear-gradient(
       135deg,

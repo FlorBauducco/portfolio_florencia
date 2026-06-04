@@ -6,7 +6,7 @@ export interface NavItem {
   readonly icon: LucideIcon;
 }
 
-export type SectionId = "home" | "about" | "skills" | "experience" | "contact";
+export type SectionId = "home" | "about" | "skills" | "studies" | "experience" | "contact";
 
 export interface Skill {
   readonly name: string;

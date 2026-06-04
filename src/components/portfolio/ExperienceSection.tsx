@@ -4,6 +4,7 @@ import {
   RELEVANT_EXPERIENCES,
   NON_RELEVANT_EXPERIENCES,
 } from "@/data/portfolio";
+import { useScrollProgress } from "@/hooks/useScrollAnimation";
 import type { Experience } from "@/types/portfolio";
 
 type TabKey = "relevant" | "non-relevant";
@@ -16,55 +17,84 @@ interface TabConfig {
 
 const TABS: readonly TabConfig[] = [
   { key: "relevant", label: "Experiencia relevante", data: RELEVANT_EXPERIENCES },
-  {
-    key: "non-relevant",
-    label: "Otras experiencias",
-    data: NON_RELEVANT_EXPERIENCES,
-  },
+  { key: "non-relevant", label: "Otras experiencias", data: NON_RELEVANT_EXPERIENCES },
 ] as const;
 
-const ExperienceCard = ({ experience }: { readonly experience: Experience }) => (
-  <div className="bg-card rounded-xl p-6 shadow-sm border border-border">
-    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-      <h4 className="font-semibold text-foreground">{experience.title}</h4>
-      <span className="text-sm text-primary font-medium">
-        {experience.period}
-      </span>
-    </div>
-    <p className="text-sm text-muted-foreground mb-3">{experience.company}</p>
-    <p className="text-muted-foreground mb-4">{experience.description}</p>
-    <div className="flex flex-wrap gap-2">
-      {experience.tags.map((tag) => (
-        <span
-          key={tag}
-          className="px-2.5 py-1 text-xs rounded-full bg-secondary text-secondary-foreground font-medium"
-        >
-          {tag}
-        </span>
-      ))}
-    </div>
-  </div>
-);
+// Cada card tiene su propia animación independiente
+const ExperienceCard = ({ experience }: { readonly experience: Experience }) => {
+  const { ref, progress } = useScrollProgress();
 
-const NonRelevantBanner = () => (
-  <div className="rounded-xl border border-primary/20 bg-primary/5 px-5 py-4 mb-6 text-sm text-muted-foreground leading-relaxed italic">
-    💼 Estas experiencias no están directamente relacionadas con mi camino en el
-    desarrollo de software, pero han sido fundamentales para forjarme como
-    profesional. Me han enseñado a comunicarme, adaptarme y desenvolverme en entornos corporativos exigentes, creando habilidades que hoy complementan mi perfil técnico.
-  </div>
-);
+  return (
+    <div
+      ref={ref}
+      style={{
+        opacity: progress,
+        transform: `scale(${0.9 + 0.1 * progress})`,
+        willChange: "opacity, transform",
+      }}
+      className="bg-card rounded-xl p-6 shadow-sm border border-border"
+    >
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+        <h4 className="font-semibold text-foreground">{experience.title}</h4>
+        <span className="text-sm text-primary font-medium">{experience.period}</span>
+      </div>
+      <p className="text-sm text-muted-foreground mb-3">{experience.company}</p>
+      <p className="text-muted-foreground mb-4">{experience.description}</p>
+      <div className="flex flex-wrap gap-2">
+        {experience.tags.map((tag) => (
+          <span
+            key={tag}
+            className="px-2.5 py-1 text-xs rounded-full bg-secondary text-secondary-foreground font-medium"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const NonRelevantBanner = () => {
+  const { ref, progress } = useScrollProgress();
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        opacity: progress,
+        transform: `scale(${0.9 + 0.1 * progress})`,
+        willChange: "opacity, transform",
+      }}
+      className="rounded-xl border border-primary/20 bg-primary/5 px-5 py-4 mb-6 text-sm text-muted-foreground leading-relaxed italic"
+    >
+      💼 Estas experiencias no están directamente relacionadas con mi camino en el
+      desarrollo de software, pero han sido fundamentales para forjarme como
+      profesional. Me han enseñado a comunicarme, adaptarme y desenvolverme en
+      entornos corporativos exigentes, creando habilidades que hoy complementan
+      mi perfil técnico.
+    </div>
+  );
+};
 
 const ExperienceSection = () => {
   const [activeTab, setActiveTab] = useState<TabKey>("relevant");
+  const { ref, progress } = useScrollProgress();
   const currentTab = TABS.find((t) => t.key === activeTab) ?? TABS[0];
 
   return (
     <SectionWrapper id="experience">
-      <div className="animate-fade-in-up">
+      {/* Título y tabs con su propia animación */}
+      <div
+        ref={ref}
+        style={{
+          opacity: progress,
+          transform: `scale(${0.9 + 0.1 * progress})`,
+          willChange: "opacity, transform",
+        }}
+      >
         <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-gradient">
           Experiencia
         </h2>
-
         <div className="flex gap-2 mb-8">
           {TABS.map((tab) => (
             <button
@@ -80,15 +110,15 @@ const ExperienceSection = () => {
             </button>
           ))}
         </div>
+      </div>
 
-        {/* Banner solo visible en "Otras experiencias" */}
-        {activeTab === "non-relevant" && <NonRelevantBanner />}
+      {activeTab === "non-relevant" && <NonRelevantBanner />}
 
-        <div className="space-y-4">
-          {currentTab.data.map((exp) => (
-            <ExperienceCard key={`${exp.title}-${exp.company}`} experience={exp} />
-          ))}
-        </div>
+      {/* Cada card se anima por separado */}
+      <div className="space-y-4">
+        {currentTab.data.map((exp) => (
+          <ExperienceCard key={`${exp.title}-${exp.company}`} experience={exp} />
+        ))}
       </div>
     </SectionWrapper>
   );

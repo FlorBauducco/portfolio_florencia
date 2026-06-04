@@ -3,7 +3,7 @@ import SectionWrapper from "./SectionWrapper";
 import profileImg from "@/assets/me3.jpg";
 import { useEffect, useState } from "react";
 
-const TYPEWRITER_TEXT = "Desarrolladora Junior en crecimiento...";
+const TYPEWRITER_TEXT = "< Desarrolladora Full-Stack />";
 
 const HeroSection = () => {
   const [displayed, setDisplayed] = useState("");
@@ -38,7 +38,7 @@ const HeroSection = () => {
   return (
     <SectionWrapper id="home" className="relative pb-20 md:pb-0">
       <div className="absolute top-8 left-0 right-0 flex justify-center pointer-events-none px-4">
-        <span className="text-gradient font-mono text-sm md:text-2xl lg:text-3xl font-semibold tracking-wide">
+        <span className="text-gradient font-display text-sm md:text-2xl lg:text-3xl font-semibold tracking-wide">
           {displayed}
           <span className="animate-pulse">|</span>
         </span>
@@ -59,11 +59,11 @@ const HeroSection = () => {
           />
         </div>
         <div className="text-center md:text-left">
-          <p className="text-muted-foreground font-medium mb-2">¡Hola! Soy</p>
+          <p className="text-muted-foreground font-medium mb-5 md:text-center">¡Hola! Soy</p>
           <h1 className="text-4xl md:text-6xl font-display font-bold mb-4 text-gradient">
             Florencia Bauducco
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed">
             Desarrolladora junior con mentalidad de crecimiento constante y
             gran capacidad de adaptación. Me apasiona resolver problemas y
             convertir ideas en soluciones reales. Me encuentro con muchas ganas de comenzar
