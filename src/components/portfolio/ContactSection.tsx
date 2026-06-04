@@ -25,20 +25,21 @@ const ContactSection = () => {
           Madrid, España
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {CONTACT_LINKS.map(({ label, href, icon: Icon, username }) => (
+        <div className="flex flex-row items-center justify-center gap-6">
+          {CONTACT_LINKS.map(({ label, href, icon: Icon }) => (
             <a
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-6 py-4 rounded-xl bg-card border border-border shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300 w-full sm:w-auto"
+              className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-card border border-border shadow-sm hover:shadow-md hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+              aria-label={label}
             >
-              <Icon size={20} className="text-primary flex-shrink-0" />
-              <div className="text-left">
-                <p className="text-xs text-muted-foreground">{label}</p>
-                <p className="text-sm font-medium text-foreground">{username}</p>
-              </div>
+              <Icon size={24} />
+              {/* Tooltip al hover */}
+              <span className="absolute -top-9 left-1/2 -translate-x-1/2 px-3 py-1 rounded-md bg-card text-foreground text-xs font-medium shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap border border-border">
+                {label}
+              </span>
             </a>
           ))}
         </div>
